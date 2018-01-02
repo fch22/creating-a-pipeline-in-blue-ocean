@@ -11,9 +11,9 @@ pipeline {
       steps {
         sh '''npm config set proxy http://proxy.lbs.alcatel-lucent.com:8000
 '''
-        sh '''
-npm install
-
+        sh '''npm config list -l
+'''
+        sh '''npm install
 '''
       }
     }
