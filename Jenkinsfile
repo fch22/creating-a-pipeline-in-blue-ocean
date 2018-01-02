@@ -8,6 +8,9 @@ pipeline {
   }
   stages {
     stage('Build') {
+      environment {
+        https_proxy = 'http://proxy.lbs.alcatel-lucent.com:8000'
+      }
       steps {
         sh '''npm config set proxy http://proxy.lbs.alcatel-lucent.com:8000
 '''
