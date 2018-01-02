@@ -9,8 +9,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''npm config
-list'''
+        sh '''npm config list
+'''
       }
     }
   }
