@@ -12,7 +12,7 @@ pipeline {
         https_proxy = 'http://proxy.lbs.alcatel-lucent.com:8000'
       }
       steps {
-        sh '''npm config set proxy http://proxy.lbs.alcatel-lucent.com:8000
+        sh '''npm config set https-proxy http://proxy.lbs.alcatel-lucent.com:8000
 '''
         sh '''npm config list -l
 '''
