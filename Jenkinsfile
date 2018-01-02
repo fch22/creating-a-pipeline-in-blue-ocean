@@ -7,12 +7,6 @@ pipeline {
     
   }
   stages {
-    stage('proxy') {
-      steps {
-        sh '''npm config set proxy http://proxy.lbs.alcatel-lucent.com:8000
-'''
-      }
-    }
     stage('Build') {
       steps {
         sh '''npm config set proxy http://proxy.lbs.alcatel-lucent.com:8000
