@@ -8,16 +8,25 @@ pipeline {
   }
   stages {
     stage('Build') {
-      environment {
-        https_proxy = 'http://proxy.lbs.alcatel-lucent.com:8000'
-      }
-      steps {
-        sh '''npm config set https-proxy http://proxy.lbs.alcatel-lucent.com:8000
+      parallel {
+        stage('Build') {
+          environment {
+            https_proxy = 'http://proxy.lbs.alcatel-lucent.com:8000'
+          }
+          steps {
+            sh '''npm config set https-proxy http://proxy.lbs.alcatel-lucent.com:8000
 '''
-        sh '''npm config list -l
+            sh '''npm config list -l
 '''
-        sh '''npm install
+            sh '''npm install
 '''
+          }
+        }
+        stage('buikld 1') {
+          steps {
+            echo 'hello word'
+          }
+        }
       }
     }
     stage('Test') {
